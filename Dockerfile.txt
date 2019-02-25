@@ -1,8 +1,8 @@
 FROM tomcat:7-jre7
 MAINTAINER xyz
-COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
-COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
+COPY tomcat-users.xml /usr/local/tomcat/conf/
 RUN ["rm", "-fr", "/usr/local/tomcat/webapps/java-sample-app-1.0.0.war"]
-COPY java-sample-app-1.0.0.war /usr/local/tomcat/webapps/java-sample-app-1.0.0.war
+COPY /var/lib/jenkins/workspace/kube_project-1/target/*.jar /usr/local/tomcat/webapps/
 
 CMD ["catalina.sh", "run"]
