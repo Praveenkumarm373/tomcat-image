@@ -1,3 +1,3 @@
 docker build -t tomcat:latest .
-docker tag tomcat zippyops1/tomcat:latest
-docker push zippyops1/tomcat:latest
+docker tag tomcat praveeenkumarm373/tomcat:latest
+docker push praveeenkumarm373/tomcat:latest
